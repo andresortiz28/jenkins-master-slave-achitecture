@@ -1,12 +1,7 @@
 # Titule
 Explication
 
-<<<<<<< HEAD
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
-=======
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/tree/master/img/f6.png)
->>>>>>> origin/master
-
 
 ## Quick Start
 - Clone or download this repository
