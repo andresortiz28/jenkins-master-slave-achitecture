@@ -53,7 +53,8 @@ Structure of the source code
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f1.png)
 
-Step 1: Open a terminal, go to the source code folder, and type
+#### Step 1
+Open a terminal, go to the source code folder, and type
 ```sh
 docker-compose build
 ```
@@ -61,16 +62,19 @@ You can see the new docker images: "miniproyecto_master_jk" & "miniproyecto_slav
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f2.png)
 
-Step 2: Up the master node of jenkins
+#### Step 2
+Up the master node of jenkins
 ```sh
 docker-compose up master_jk
 ```
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f3.png)
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f4.png)
-
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f5.png)
+#### Step 3
+Up the master node of jenkins
+```sh
+docker-compose up master_jk
+```
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
 
