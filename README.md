@@ -1,7 +1,7 @@
 # Titule
 Explication
 
-![alt tag] (https://github.com/andresort28/jenkins-master-slave-achitecture/tree/master/img/f6.png)
+![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
 
 
 ## Quick Start
