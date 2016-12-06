@@ -71,12 +71,12 @@ docker-compose up master_jk
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f3.png)
 
 #### Step 3
-Up the master node of jenkins
-```sh
-docker-compose up master_jk
-```
+Open a browser and type the IP adress 172.17.0.1:80
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
+
+#### Step 4
+Clic on "Manage Jenkins"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f7.png)
 
