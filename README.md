@@ -1,5 +1,8 @@
 # Jenkins Master-Slave Architecture 
 
+Andres Felipe Ortiz - 10207000
+Universidad Icesi
+
 ### Description
 The project deploys a master jenkins node which is the main node to do the Jobs, and also a slave jenkins node to do those kind of jobs.
 
@@ -41,7 +44,8 @@ docker-compose up master_jk
 ### Verify
 Open a browser and type http://172.17.0.1 to see the Jenkins dashboard.
 
-### Process
+
+### Step by Step
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f1.png)
 
