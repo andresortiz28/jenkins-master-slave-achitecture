@@ -34,6 +34,72 @@ docker pull jenkins
 docker pull evarga/jenkins-slave
 ```
 
+### Content
+
+docker-compose.yml
+```sh
+version: '2'
+services:
+  master_jk:
+    build: ./master_jk
+    ports:
+      - "80:8080"
+  slave_jk:
+    build: ./slave_jk 
+```
+
+master_jk/Dockerfile
+```sh
+FROM jenkins
+MAINTAINER andresortiz28@hotmail.com
+
+RUN /usr/local/bin/install-plugins.sh github
+RUN /usr/local/bin/install-plugins.sh docker-plugin
+RUN /usr/local/bin/install-plugins.sh saferestart
+
+ENV JENKINS_MIRROR http://mirrors.jenkins-ci.org
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+```
+
+master_jk/Dockerfile
+```sh
+FROM evarga/jenkins-slave
+MAINTAINER andresortiz28@hotmail.com
+
+ENV JENKINS_MIRROR http://mirrors.jenkins-ci.org
+USER root
+
+# --- Install the needed dependencies ---
+RUN apt-get update
+RUN apt-get install git -y
+RUN apt-get install python -y
+RUN apt-get install wget -y
+
+
+# --- Install Python package manager and virtualenv package ---
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+RUN pip install virtualenv
+
+
+# --- Create a virtual environment for the project
+WORKDIR /home/jenkins
+RUN mkdir /home/jenkins/.virtualenvs
+WORKDIR /home/jenkins/.virtualenvs
+RUN virtualenv testproject
+RUN . testproject/bin/activate
+
+
+# --- Install requirements for the project in the virtualenv ---
+WORKDIR /home/jenkins/workspace/test
+RUN chmod -R 777 /home/jenkins/workspace/test
+RUN pip install xmlrunner
+RUN pip install unittest2
+RUN pip install pytest
+RUN pip install pytest-cov
+RUN pip install flask
+```
+
 ### Deploy
 Open a terminal, go to the directory where you cloned the repository, and deploy in this way:
 ```sh
