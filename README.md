@@ -3,6 +3,10 @@ Explication
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
 
+- Change
+
+![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6copy.png)
+
 ## Quick Start
 - Clone or download this repository
 
