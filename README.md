@@ -45,7 +45,7 @@ docker-compose up master_jk
 Open a browser and type http://172.17.0.1 to see the Jenkins dashboard.
 
 
-### Manual Test
+## Manual Test
 
 The following pictures show the process to do a manual test of the system, step by step:
 
@@ -53,7 +53,7 @@ Structure of the source code
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f1.png)
 
-#### Step 1
+### Step 1
 Open a terminal, go to the source code folder, and type
 ```sh
 docker-compose build
@@ -62,7 +62,7 @@ You can see the new docker images: "miniproyecto_master_jk" & "miniproyecto_slav
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f2.png)
 
-#### Step 2
+### Step 2
 Up the master node of jenkins
 ```sh
 docker-compose up master_jk
@@ -70,7 +70,7 @@ docker-compose up master_jk
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f3.png)
 
-#### Step 3
+### Step 3
 Open a browser and type the IP adress 172.17.0.1:80 & Clic on "Manage Jenkins", and "Manage Plugins"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
@@ -79,7 +79,7 @@ You can see the docker, github and restart as installed plugins
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f7.png)
 
-#### Step 4
+### Step 4
 Go back to "Manage Jenkins", and clic on "Configure System". Then go down and clic on "Add new cloud" and clic on "Docker"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f8.png)
