@@ -45,7 +45,9 @@ docker-compose up master_jk
 Open a browser and type http://172.17.0.1 to see the Jenkins dashboard.
 
 
-### Step by Step
+### Manual Test
+
+The following pictures show the process to do a manual test of the system, step by step:
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f1.png)
 
