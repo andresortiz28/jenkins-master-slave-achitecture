@@ -4,9 +4,7 @@ Andres Felipe Ortiz - 10207000
 Universidad Icesi
 
 ### Description
-The project deploys a master jenkins node which is the main node to do the Jobs, and also a slave jenkins node to do those kind of jobs.
-
-This project is about an infrastructure automation using Docker and Docker-compose in order to create virtual containers to desploy Jenkins as continuos integration tool, to test a Github repository.
+This project is about an infrastructure automation using Docker and Docker-compose in order to create virtual containers to desploy Jenkins as continuos integration tool, to test a Github repository. The project deploys a master jenkins node which is the main node to do the Jobs, and also a slave jenkins node to do those kind of jobs.
 
 This code will allow to any developer to deploy automatically a virtual infrastructure containing:
 
@@ -16,6 +14,7 @@ This code will allow to any developer to deploy automatically a virtual infrastr
 This kind of infrastructure was deployed under a Linux based operating system, specifically ubuntu 14.04.
 
 ### Required Software:
+* Ubuntu 14.04 (Host PC)
 * Docker
 * Docker-Compose
 
@@ -61,7 +60,7 @@ ENV JENKINS_MIRROR http://mirrors.jenkins-ci.org
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 ```
 
-master_jk/Dockerfile
+slave_jk/Dockerfile
 ```sh
 FROM evarga/jenkins-slave
 MAINTAINER andresortiz28@hotmail.com
@@ -99,6 +98,19 @@ RUN pip install pytest
 RUN pip install pytest-cov
 RUN pip install flask
 ```
+
+### Configure Docker API remote
+In order to allow jenkins to comunicate to the Docker engine of the host machine, we need to make the following:
+You have to edit the file /etc/init/docker.conf in the Host PC, and change a value as following:
+```sh
+DOCKER_OPTS="-H tcp://0.0.0.0:5050 -H unix:///var/run/docker.sock"
+```
+Then you have to restart docker
+```sh
+sudo service docker restart
+```
+It means, that any IP by the port 5050 could communicate with the docker engine.
+
 
 ### Deploy
 Open a terminal, go to the directory where you cloned the repository, and deploy in this way:
@@ -150,15 +162,7 @@ Go back to "Manage Jenkins", and clic on "Configure System". Then go down and cl
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f8.png)
 
-Fill out the form as following, with the IP and PORT of Docker API Remote, which we have to configure before to do "docker-compose up master_jk".
-You have to edit the file /etc/init/docker.conf in the host machine, adn change the value as following:
-```sh
-DOCKER_OPTS="-H tcp://0.0.0.0:5050 -H unix:///var/run/docker.sock"
-```
-Then you have to restart docker
-```sh
-sudo service docker restart
-```
+Fill out the form as following, with the IP (Host PC) and PORT of Docker API Remote, which we have to configure before to do "docker-compose up master_jk".
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f9.png)
 
@@ -170,6 +174,7 @@ Add a Username and Password both like "jenkins", and clic on "Add"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f11.png)
 
+### Step 5
 Then, you need to add a Docker template
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f12.png)
@@ -182,6 +187,7 @@ Just save it.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f14.png)
 
+### Step 6
 Go back to the Dashboard, and clic on "New Item"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f15.png)
@@ -194,10 +200,12 @@ Choose the same label of the Docker Template at the beginning.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f17.png)
 
+### Step 7
 In this part, we are going to use a repository of git, just to compile and make a test. So, just copy the github link as following, and add the created credential.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f18.png)
 
+### Step 8
 Choose to execute the test process in a Shell.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f19.png)
@@ -209,6 +217,7 @@ In this parte, we need to write the code we want to execute to make the testing 
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f20.png)
 
+### Step 9
 Then, clic on "Build Now" to execute. Just wait.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f21.png)
@@ -218,6 +227,7 @@ The job was executed with success.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f22.png)
 
+### Step 10
 To view the results, just clic on "Console Output"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f23.png)
