@@ -234,6 +234,15 @@ To view the results, just clic on "Console Output"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f24.png)
 
+### References
+* https://github.com/jenkinsci/docker
+* https://wiki.jenkins-ci.org/display/JENKINS/Docker+Plugin
+* https://hub.docker.com/r/evarga/jenkins-slave/
+* https://www.youtube.com/watch?v=0Tub1TUrmX8
+* https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+with+Docker
+* https://github.com/evarga/docker-images/blob/master/jenkins-slave/Dockerfile
+* https://github.com/d4n13lbc/testproject
+
 
 ## Contribute
 Github is all about contributions. If you think you can collaborate or improve this, please make sure you send me a pull request
