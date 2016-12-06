@@ -112,21 +112,23 @@ In this parte, you need to put the name of the Docker image of the slave node of
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f13.png)
 
-Go back to the Dashboard, and clic on "New Item"
+Just save it.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f14.png)
 
-Just type "test" as the name of the new item.
+Go back to the Dashboard, and clic on "New Item"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f15.png)
 
-Choose the same label of the Docker Template at the beginning.
+Just type "test" as the name of the new item.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f16.png)
 
-In this part, we are going to use a repository of git, just to compile and make a test. So, just copy the github link as following, and add the created credential.
+Choose the same label of the Docker Template at the beginning.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f17.png)
+
+In this part, we are going to use a repository of git, just to compile and make a test. So, just copy the github link as following, and add the created credential.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f18.png)
 
