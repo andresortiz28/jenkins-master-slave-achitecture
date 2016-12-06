@@ -75,24 +75,40 @@ Open a browser and type the IP adress 172.17.0.1:80
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
 
-#### Step 4
 Clic on "Manage Jenkins"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f7.png)
 
+Clic on "Manage Plugins"
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f8.png)
+
+You can see the docker, github and restart as installed plugins
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f9.png)
 
+#### Step 4
+Go back to "Manage Jenkins", and clic on "Configure System". Then go down and clic on "Add new cloud" and clic on "Docker"
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f10.png)
+
+Fill out the form as following, with the IP and PORT of Docker API Remote, which we configured some steps before in the host machine.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f11.png)
 
+Add new credentials
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f12.png)
+
+Add a Username and Password both like "jenkins", and clic on "Add"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f13.png)
 
+Then, you need to add a Docker template
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f14.png)
+
+In this parte, you need to put the name of the Docker image of the slave node of jenkins created in the Step #1
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f15.png)
 
