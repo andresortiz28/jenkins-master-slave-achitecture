@@ -132,13 +132,27 @@ In this part, we are going to use a repository of git, just to compile and make 
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f18.png)
 
+Choose to execute the test process in a Shell.
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f19.png)
 
+In this parte, we need to write the code we want to execute to make the testing process and save it.
+```sh
+. $WORKSPACE/run_tests.sh
+```
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f20.png)
+
+Then, clic on "Build Now" to execute. Just wait.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f21.png)
 
+Awesome!
+The job was executed with success.
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f20.png)
+
+To view the results, just clic on "Console Output"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f21.png)
 
