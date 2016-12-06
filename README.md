@@ -84,7 +84,15 @@ Go back to "Manage Jenkins", and clic on "Configure System". Then go down and cl
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f8.png)
 
-Fill out the form as following, with the IP and PORT of Docker API Remote, which we configured some steps before in the host machine.
+Fill out the form as following, with the IP and PORT of Docker API Remote, which we have to configure before to do "docker-compose up master_jk".
+You have to edit the file /etc/init/docker.conf in the host machine, adn change the value as following:
+```sh
+DOCKER_OPTS="-H tcp://0.0.0.0:5050 -H unix:///var/run/docker.sock"
+```
+Then you have to restart docker
+```sh
+sudo service docker restart
+```
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f9.png)
 
@@ -100,18 +108,23 @@ Then, you need to add a Docker template
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f12.png)
 
-In this parte, you need to put the name of the Docker image of the slave node of jenkins created in the Step #1
+In this parte, you need to put the name of the Docker image of the slave node of jenkins created in the Step #1 called "miniproyecto_slave_jk", and complete the rest of the form as following:
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f13.png)
 
-
+Go back to the Dashboard, and clic on "New Item"
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f14.png)
 
+Just type "test" as the name of the new item.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f15.png)
 
+Choose the same label of the Docker Template at the beginning.
+
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f16.png)
+
+In this part, we are going to use a repository of git, just to compile and make a test. So, just copy the github link as following, and add the created credential.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f17.png)
 
