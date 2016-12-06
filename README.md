@@ -150,13 +150,9 @@ Then, clic on "Build Now" to execute. Just wait.
 Awesome!
 The job was executed with success.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f20.png)
+![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f22.png)
 
 To view the results, just clic on "Console Output"
-
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f21.png)
-
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f22.png)
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f23.png)
 
