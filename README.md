@@ -1,5 +1,5 @@
-# Titule
-Explication
+# Jenkins Master-Slave Architecture 
+This proyect is about an infrastructure automation using Docker and Docker-compose in order to create virtual containers to desploy Jenkins as continuos integration tool, to test a Github repository.
 
 ![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
 
