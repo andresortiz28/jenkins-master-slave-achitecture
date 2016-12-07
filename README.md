@@ -129,7 +129,7 @@ The following pictures show the process to do a manual test of the system, step 
 
 Structure of the source code
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f1.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f1.png)
 
 ### Step 1
 Open a terminal, go to the source code folder, and type
@@ -138,7 +138,7 @@ docker-compose build
 ```
 You can see the new docker images: "miniproyecto_master_jk" & "miniproyecto_slave_jk"
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f2.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f2.png)
 
 ### Step 2
 Up the master node of jenkins
@@ -146,93 +146,93 @@ Up the master node of jenkins
 docker-compose up master_jk
 ```
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f3.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f3.png)
 
 ### Step 3
 Open a browser and type the IP adress 172.17.0.1:80 & Clic on "Manage Jenkins", and "Manage Plugins"
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f6.png)
 
 You can see the docker, github and restart as installed plugins
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f7.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f7.png)
 
 ### Step 4
 Go back to "Manage Jenkins", and clic on "Configure System". Then go down and clic on "Add new cloud" and clic on "Docker"
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f8.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f8.png)
 
 Fill out the form as following, with the IP (Host PC) and PORT of Docker API Remote, which we have to configure before to do "docker-compose up master_jk".
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f9.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f9.png)
 
 Add new credentials
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f10.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f10.png)
 
 Add a Username and Password both like "jenkins", and clic on "Add"
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f11.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f11.png)
 
 ### Step 5
 Then, you need to add a Docker template
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f12.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f12.png)
 
 In this parte, you need to put the name of the Docker image of the slave node of jenkins created in the Step #1 called "miniproyecto_slave_jk", and complete the rest of the form as following:
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f13.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f13.png)
 
 Just save it.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f14.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f14.png)
 
 ### Step 6
 Go back to the Dashboard, and clic on "New Item"
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f15.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f15.png)
 
 Just type "test" as the name of the new item.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f16.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f16.png)
 
 Choose the same label of the Docker Template at the beginning.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f17.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f17.png)
 
 ### Step 7
 In this part, we are going to use a repository of git, just to compile and make a test. So, just copy the github link as following, and add the created credential.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f18.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f18.png)
 
 ### Step 8
 Choose to execute the test process in a Shell.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f19.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f19.png)
 
 In this parte, we need to write the code we want to execute to make the testing process and save it.
 ```sh
 . $WORKSPACE/run_tests.sh
 ```
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f20.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f20.png)
 
 ### Step 9
 Then, clic on "Build Now" to execute. Just wait.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f21.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f21.png)
 
 Awesome!
 The job was executed with success.
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f22.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f22.png)
 
 ### Step 10
 To view the results, just clic on "Console Output"
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f23.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f23.png)
 
-![alt tag](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f24.png)
+![](https://github.com/andresort28/jenkins-master-slave-achitecture/blob/master/img/f24.png)
 
 ### References
 * https://github.com/jenkinsci/docker
