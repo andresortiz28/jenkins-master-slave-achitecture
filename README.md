@@ -50,7 +50,7 @@ services:
 master_jk/Dockerfile
 ```sh
 FROM jenkins
-MAINTAINER andresortiz28@hotmail.com
+MAINTAINER andresortiz28@gmail.com
 
 RUN /usr/local/bin/install-plugins.sh github
 RUN /usr/local/bin/install-plugins.sh docker-plugin
@@ -63,7 +63,7 @@ ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 slave_jk/Dockerfile
 ```sh
 FROM evarga/jenkins-slave
-MAINTAINER andresortiz28@hotmail.com
+MAINTAINER andresortiz28@gmail.com
 
 ENV JENKINS_MIRROR http://mirrors.jenkins-ci.org
 USER root
